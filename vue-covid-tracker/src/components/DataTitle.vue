@@ -13,7 +13,7 @@ export default{
 	computed:{
 		timestamp: function() {
 			return moment(this.dataDate).format('MMMM Do YYYY, h:mm:ss a')
-		}
-	}
+		},
+	},
 }
 </script>
