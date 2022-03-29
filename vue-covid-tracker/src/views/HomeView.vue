@@ -1,13 +1,24 @@
 <template>
-  <main class="home">
-    Hello World
+  <main v-if="!loading">
+    <DataTitle :text="title" :dataDate="dataDate" />
+  </main>
+  <main class="flex flex-column align-center justify-center text-center" v-else>
+    <div class="text-gray-500 text-3xl mt-10 mb-6">
+      Fetching Data
+    </div>
+    <img :src="loadingImage" class="w-24 m-auto" alt="loading hour glass"/>
   </main>
 </template>
 
 <script>
+
+import DataTitle from '@/components/DataTitle'
+
 export default {
   name: 'HomeView',
-  components: {},
+  components: {
+    DataTitle
+  },
   data(){
     return{
       loading:true,
