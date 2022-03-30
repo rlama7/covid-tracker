@@ -1,6 +1,7 @@
 <template>
   <main v-if="!loading">
     <DataTitle :text="title" :dataDate="dataDate" />
+    <DataBoxes :stats="stats"/>
   </main>
 
   <main class="flex flex-col align-center justify-center text-center" v-else>
@@ -14,11 +15,13 @@
 <script>
 
 import DataTitle from '@/components/DataTitle'
+import DataBoxes from '@/components/DataBoxes'
 
 export default {
   name: 'HomeView',
   components: {
-    DataTitle
+    DataTitle,
+    DataBoxes,
   },
   data(){
     return{
@@ -39,7 +42,7 @@ export default {
   },
   async created(){
     const data = await this.fetchCovidData()
-    // console.log(data)
+    console.log(data)
     this.dataDate = data.dataDate
     this.stats = data.Global
     this.countries = data.countries
