@@ -1,8 +1,9 @@
 <template>
-<Header />
-<div class="container">
-  <router-view/>
-</div>
+  
+  <div class="container">
+    <Header />
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -12,5 +13,5 @@ export default{
   components:{
     Header
   }
-}
+};
 </script>
