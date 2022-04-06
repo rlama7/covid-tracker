@@ -26,18 +26,20 @@
 		</div>
 	</div>
 </div>
-
 </template>
 
 <script>
 export default{
 	name: 'DataBoxes',
 	props:['stats'],
-	methods: {
-		numberWithCommas(x){
-			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	setup(){
+		return{
+			numberWithCommas(num){
+				return num
+				.toString()
+				.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+			}
 		}
 	}
-	
 }
 </script>
